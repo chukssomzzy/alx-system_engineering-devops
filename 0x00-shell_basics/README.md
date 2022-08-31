@@ -12,3 +12,8 @@
   #!/bin/bash 
   ls  # shows the content of a dir
  ```
+ ## Back to home 
+ ``` 
+    #!bin/bash 
+    cd ~
+ ```
