@@ -72,3 +72,9 @@ cd .. #moves to the previous dir
 #!/bin/bash 
 ls -la . .. /boot 
 ```
+
+## Type of iamafile 
+```
+#!/bin/bash 
+file /tmp/iamafile 
+```
