@@ -109,7 +109,7 @@ rm -r ./*~
 mkdir -p {welcome\/to,welcome,welcome\/to\/school} 
 ```
 
-# Format list with , and directory with / 
+## Format list with , and directory with / 
 ``` 
 #!/bin/bash 
 ls -mpa 
