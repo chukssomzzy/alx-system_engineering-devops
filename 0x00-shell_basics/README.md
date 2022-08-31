@@ -1,6 +1,14 @@
-# List All Files and subdirectory 
+# Shell Basics
+
+## List All Files and subdirectory 
  ```
- #!/usr/bin 
+ #!/bin/bash 
  # this show the location of bash sheel 
- ls # lists the content
+ pwd # this shows the absolute path of a dir
+ ```
+
+ ## List Content Of A dir 
+ ```
+  #!/bin/bash 
+  ls  # shows the content of a dir
  ```
