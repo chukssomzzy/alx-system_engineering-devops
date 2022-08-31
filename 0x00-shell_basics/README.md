@@ -22,5 +22,5 @@
  ## List file in human readable format 
  ``` 
  #!/bin/bash
- ls -hl # this option list the file in human readable format hence the `h` the `l` option list all the options 
+ ls -l # this option  `l` list ever thing related to the file or dir 
  ```
