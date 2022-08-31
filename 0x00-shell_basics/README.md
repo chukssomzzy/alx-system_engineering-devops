@@ -78,3 +78,9 @@ ls -la . .. /boot
 #!/bin/bash 
 file /tmp/iamafile 
 ```
+
+## Sym link 
+`` 
+#!/bin/bash 
+ln /bin/ls __ls__ 
+``
