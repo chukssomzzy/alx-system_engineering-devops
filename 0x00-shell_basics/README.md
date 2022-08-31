@@ -96,3 +96,9 @@ cp -u -r *.html ../ # this flag does all the heavy lifting
  #!/bin/bash 
  mv [[:upper:]]* /tmp/u/ 
  ```
+
+## Clean emacs 
+``` 
+ #!/bin/bash 
+rm -r ./*~ 
+```
