@@ -90,3 +90,9 @@ ln -s -T /bin/ls __ls__
 #!/bin/bash 
 cp -u -r *.html ../ # this flag does all the heavy lifting 
 `````
+
+## Moves all files biginning with an uppercase to /tmp/u 
+ ``` 
+ #!/bin/bash 
+ mv [[:upper:]]* /tmp/u/ 
+ ```
