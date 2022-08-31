@@ -22,5 +22,11 @@
  ## List file in human readable format 
  ``` 
  #!/bin/bash
- ls -l # this option  `l` list ever thing related to the file or dir 
+ ls -l # this option  `l` format the output using `long format` list ever thing related to the file or dir 
+ ```
+
+ ## List all files including hidden file in long format 
+ ``` 
+ #!/bin/bash 
+ ls -la # the option `a` tells `ls` to also include hidden files 
  ```
