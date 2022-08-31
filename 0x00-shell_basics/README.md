@@ -33,8 +33,8 @@
 
  ## List hidden file, long format and users and group ids in numeric format 
  ``` 
- #!/bin/bash //shebang #! 
- ls -na // the `n` option is like 'l' option but lists the user and group ids in numbers hope that makes sense 
+ #!/bin/bash #shebang #! 
+ ls -na # the `n` option is like 'l' option but lists the user and group ids in numbers hope that makes sense 
  ``` 
 
 ## hope this works
@@ -52,11 +52,17 @@ mv /tmp/betty /tmp/my_first_directory/betty
 ## Delete a file betty 
 ``` 
 #!/bin/bash 
-rm  /tmp/my_first_directory/betty  // bye bye betty 
+rm  /tmp/my_first_directory/betty  # bye bye betty 
 ``` 
 
 ## Delete a dir 
 ``` 
 #!/bin/bash 
-rm -R /tmp/my_first_directory/ // the option 'R' tells remove recursively remove all the file in the dir 
+rm -R /tmp/my_first_directory/ # the option 'R' tells remove recursively remove all the file in the dir 
+```  
+
+## Back to previous dir 
+``` 
+#!/bin/bash 
+cd .. #moves to the previous dir 
 ``` 
