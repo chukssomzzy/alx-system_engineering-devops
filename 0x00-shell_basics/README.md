@@ -42,3 +42,9 @@
  #!/bin/bash 
  mkdir /tmp/my_first_directory/
  ```
+
+## move a file betty 
+``` 
+#!/bin/bash 
+mv /tmp/betty /tmp/my_first_directory/betty 
+```
