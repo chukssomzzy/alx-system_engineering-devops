@@ -102,3 +102,9 @@ cp -u -r *.html ../ # this flag does all the heavy lifting
  #!/bin/bash 
 rm -r ./*~ 
 ```
+
+## Tree 
+``` 
+#i/bin/bash 
+mkdir welcome/ welcome/to/ welcome/to/school 
+```
