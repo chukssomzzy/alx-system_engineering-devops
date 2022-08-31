@@ -105,6 +105,6 @@ rm -r ./*~
 
 ## Tree 
 ``` 
-#i/bin/bash 
-mkdir welcome/ welcome/to/ welcome/to/school 
+#!/bin/bash 
+mkdir -p {welcome\/to,welcome,welcome\/to\/school} 
 ```
