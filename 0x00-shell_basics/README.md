@@ -66,3 +66,9 @@ rm -R /tmp/my_first_directory/ # the option 'R' tells remove recursively remove 
 #!/bin/bash 
 cd .. #moves to the previous dir 
 ``` 
+
+## List without order 
+``` 
+#!/bin/bash 
+ls -fla . .. /boot # this list the files unorder because of the -f option that disables alphabetic ordering 
+```
