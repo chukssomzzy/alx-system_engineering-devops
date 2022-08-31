@@ -64,7 +64,7 @@ rm -R /tmp/my_first_directory/ # the option 'R' tells remove recursively remove 
 ## Back to previous dir 
 ``` 
 #!/bin/bash 
-cd .. #moves to the previous dir 
+cd - #moves to the previous dir 
 ``` 
 
 ## List without order 
