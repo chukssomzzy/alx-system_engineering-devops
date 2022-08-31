@@ -53,4 +53,10 @@ mv /tmp/betty /tmp/my_first_directory/betty
 ``` 
 #!/bin/bash 
 rm  /tmp/my_first_directory/betty  // bye bye betty 
-```
+``` 
+
+## Delete a dir 
+``` 
+#!/bin/bash 
+rm -R /tmp/my_first_directory/ // the option 'R' tells remove recursively remove all the file in the dir 
+``` 
