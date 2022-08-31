@@ -30,3 +30,9 @@
  #!/bin/bash 
  ls -la # the option `a` tells `ls` to also include hidden files 
  ```
+
+ ## List hidden file, long format and users and group ids in numeric format 
+ ``` 
+ #!/bin/bash //shebang #! 
+ ls -na // the `n` option is like 'l' option but lists the user and group ids in numbers hope that makes sense 
+ ``` 
