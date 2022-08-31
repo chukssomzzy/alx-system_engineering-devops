@@ -36,3 +36,9 @@
  #!/bin/bash //shebang #! 
  ls -na // the `n` option is like 'l' option but lists the user and group ids in numbers hope that makes sense 
  ``` 
+
+## hope this works
+``` 
+ #!/bin/bash 
+ mkdir /tmp/my_first_directory/
+ ```
