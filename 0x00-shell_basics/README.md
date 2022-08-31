@@ -48,3 +48,9 @@
 #!/bin/bash 
 mv /tmp/betty /tmp/my_first_directory/betty 
 ```
+
+## Delete a file betty 
+``` 
+#!/bin/bash 
+rm  /tmp/my_first_directory/betty  // bye bye betty 
+```
