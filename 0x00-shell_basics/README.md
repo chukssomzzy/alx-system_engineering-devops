@@ -88,5 +88,5 @@ ln -s -T /bin/ls __ls__
 ## Copy if not exist or lower version exit in destination 
 ``` 
 #!/bin/bash 
-cp -u *.html ../*.html # this flag does all the heavy lifting 
+cp -u -r *.html ../ # this flag does all the heavy lifting 
 `````
