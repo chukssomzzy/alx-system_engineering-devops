@@ -18,6 +18,11 @@ whoami
 groups 
 ``` 
 
+##John Doe 
+``` 
+#!/bin/bash 
+chown 723
+```
 ## Who is the owner 
 ``` 
 #!/bin/bash
