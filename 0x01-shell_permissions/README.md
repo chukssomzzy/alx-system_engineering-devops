@@ -67,3 +67,8 @@ chmod =007 hello
 chmod --reference=olleh hello 
 ``` 
 
+## Add permission to dir 
+~~
+#!/bin/bash 
+chmod +111 $(find * -type f)
+~~
