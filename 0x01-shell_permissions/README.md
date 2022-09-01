@@ -51,12 +51,19 @@ chmod 754 hello
 ## Give all the power of the god but not all the power 
 ````
 #!/bin/bash 
-chmod+551 hello 
+chmod +551 hello 
 ````
 
 ## james Bond mode 
 ``` 
 #!/bin/bash 
-chmod=007 hello
+chmod =007 hello
 // very weird permission 
 ```
+
+## Creating a mirror 
+``` 
+#!/bin/bash 
+chmod --reference=olleh hello 
+``` 
+
