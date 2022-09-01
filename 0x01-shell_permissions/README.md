@@ -40,6 +40,6 @@ chmod u+x hello
 
 ```
 #!/bin/bash 
-chmod 114 hello 
+chmod 754 hello 
 ``` 
 
