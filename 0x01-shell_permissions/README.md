@@ -16,4 +16,9 @@ whoami
 ``` 
 #!/bin/bash 
 groups 
+``` 
+## Who is the owner 
+``` 
+#!/bin/bash 
+chown somzzy hello.c 
 ```
