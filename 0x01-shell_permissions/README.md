@@ -29,3 +29,9 @@ chown somzzy hello.c
 #!/bin/bash 
 touch hello 
 ```
+
+## Add x to hello 
+``` 
+#!/bin/bash 
+chmod u+x hello 
+```
