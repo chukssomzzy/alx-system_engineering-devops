@@ -12,3 +12,8 @@ su betty #this changes the current user to betty
 whoami
 `````
 
+## Let Print Some Groups 
+``` 
+#!/bin/bash 
+groups 
+```
