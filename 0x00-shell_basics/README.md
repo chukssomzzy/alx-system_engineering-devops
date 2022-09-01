@@ -114,3 +114,14 @@ mkdir -p {welcome\/to,welcome,welcome\/to\/school}
 #!/bin/bash 
 ls -mpa 
 ```
+
+
+## create magic file 
+``` 
+
+0 string SCHOOL School data
+
+!:mime School
+# compile with `file -c -m school.mgc`
+# use with `file -m school.mgc textfile`
+```
