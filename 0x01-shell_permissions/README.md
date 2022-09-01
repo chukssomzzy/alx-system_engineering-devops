@@ -43,3 +43,8 @@ chmod u+x hello
 chmod 754 hello 
 ``` 
 
+## Give all the power of the god but not all the power 
+````
+#!/bin/bash 
+chmod 755 hello 
+````
