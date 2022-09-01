@@ -17,8 +17,15 @@ whoami
 #!/bin/bash 
 groups 
 ``` 
+
 ## Who is the owner 
 ``` 
-#!/bin/bash 
+#!/bin/bash
 chown somzzy hello.c 
+```
+
+## just empty 
+``` 
+#!/bin/bash 
+touch hello 
 ```
