@@ -21,7 +21,7 @@ groups
 ##John Doe 
 ``` 
 #!/bin/bash 
-chown 723
+chown 763
 ```
 ## Who is the owner 
 ``` 
