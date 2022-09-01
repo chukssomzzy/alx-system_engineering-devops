@@ -35,3 +35,11 @@ touch hello
 #!/bin/bash 
 chmod u+x hello 
 ```
+
+## Give them right to read as person, execute as a group and write as a f**king god 
+
+```
+#!/bin/bash 
+chmod 114 hello 
+``` 
+
