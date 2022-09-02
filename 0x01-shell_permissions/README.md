@@ -78,3 +78,10 @@ chmod +111 $(find * -type f)
 #!/bin/bash 
 mkdir -m 751 my_dir 
 ``` 
+
+## Changing group owner 
+``` 
+#!/bin/bash 
+chown :school hello 
+``` 
+
