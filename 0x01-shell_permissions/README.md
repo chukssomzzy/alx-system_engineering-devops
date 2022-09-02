@@ -97,3 +97,10 @@ chown -R vincent:staff *
 chown -h vincent:staff _hello 
 ``` 
 
+## Change owner if owned 
+``` 
+#!/bin/bash 
+chown --from:guillaume betty hello 
+``` 
+
+
