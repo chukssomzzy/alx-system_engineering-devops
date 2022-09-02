@@ -91,3 +91,9 @@ chown :school hello
 chown -R vincent:staff *
 ```
 
+## You are not Safe 
+``` 
+#!/bin/bash 
+chown -h vincent:staff _hello 
+``` 
+
