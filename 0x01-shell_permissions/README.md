@@ -103,4 +103,8 @@ chown -h vincent:staff _hello
 chown --from:guillaume betty hello 
 ``` 
 
-
+## Time for some flex
+``` 
+#!/bin/bash 
+telnet towel.blinkenlights.nl
+```
