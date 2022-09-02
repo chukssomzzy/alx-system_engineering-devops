@@ -85,3 +85,9 @@ mkdir -m 751 my_dir
 chown :school hello 
 ``` 
 
+## Recursively change owner and group 
+``` 
+#!/bin/bash 
+chown -R vincent:staff *
+```
+
