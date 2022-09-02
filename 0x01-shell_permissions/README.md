@@ -72,3 +72,9 @@ chmod --reference=olleh hello
 #!/bin/bash 
 chmod +111 $(find * -type f)
 ~~
+
+## Add permission and create dir 
+``` 
+#!/bin/bash 
+mkdir -m 751 my_dir 
+``` 
