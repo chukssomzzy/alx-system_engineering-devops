@@ -16,3 +16,9 @@ echo -e "Hello World"
 #!/bin/bash
 cat /etc/passwd
 ``` 
+## Display pass amd hosts 
+```bash 
+#!/bin/bash
+cat /etc/{passwd,hosts}
+```
+
