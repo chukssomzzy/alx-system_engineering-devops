@@ -21,4 +21,8 @@ cat /etc/passwd
 #!/bin/bash
 cat /etc/{passwd,hosts}
 ```
-
+## Display 10 tails
+```bash
+#!/bin/bash
+tail /etc/passwd
+```
