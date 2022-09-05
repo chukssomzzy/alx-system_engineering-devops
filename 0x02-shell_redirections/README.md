@@ -32,4 +32,10 @@ tail /etc/passwd
 #!/bin/bash
 head /etc/passwd #displays 10 lines from the start of file by default
 ```
+## third cat 
+```bash
+#!/bin/bash
+head -3 ./iacta | tail -1 
+```
+
 
