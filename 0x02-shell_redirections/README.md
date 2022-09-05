@@ -26,3 +26,10 @@ cat /etc/{passwd,hosts}
 #!/bin/bash
 tail /etc/passwd
 ```
+
+## heads 
+```bash
+#!/bin/bash
+head /etc/passwd #displays 10 lines from the start of file by default
+```
+
