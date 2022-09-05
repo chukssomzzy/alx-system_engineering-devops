@@ -67,3 +67,44 @@ chmod =007 hello
 chmod --reference=olleh hello 
 ``` 
 
+## Add permission to dir 
+~~
+#!/bin/bash 
+chmod +111 $(find * -type f)
+~~
+
+## Add permission and create dir 
+``` 
+#!/bin/bash 
+mkdir -m 751 my_dir 
+``` 
+
+## Changing group owner 
+``` 
+#!/bin/bash 
+chown :school hello 
+``` 
+
+## Recursively change owner and group 
+``` 
+#!/bin/bash 
+chown -R vincent:staff *
+```
+
+## You are not Safe 
+``` 
+#!/bin/bash 
+chown -h vincent:staff _hello 
+``` 
+
+## Change owner if owned 
+``` 
+#!/bin/bash 
+chown --from:guillaume betty hello 
+``` 
+
+## Time for some flex
+``` 
+#!/bin/bash 
+telnet towel.blinkenlights.nl
+```
