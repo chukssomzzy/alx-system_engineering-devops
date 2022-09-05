@@ -10,3 +10,9 @@ echo -e "Hello World"
 #!/bin/bash
  echo -e "\"(Ôo)'"
  ```
+
+## Display a file to stdoutput
+```bash
+#!/bin/bash
+cat /etc/passwd
+``` 
