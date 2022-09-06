@@ -112,3 +112,9 @@ grep [[:alpha:]] /etc/ssh/sshd_config
 #!/bin/bash
 tr 'Ac' 'Ce'
 ```
+
+## It better to delete than translate 
+```bash
+#!/bin/bash
+tr -d 'cC' 
+```
