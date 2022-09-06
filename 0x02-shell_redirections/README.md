@@ -59,5 +59,5 @@ tail -1 iacta >> iacta
 ## No more js
 ```bash 
 #!/bin/bash
-find ./*.js -type F | rm -r
+find . -name "*.js" -type f -delete
 ```
