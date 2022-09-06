@@ -118,3 +118,9 @@ tr 'Ac' 'Ce'
 #!/bin/bash
 tr -d 'cC' 
 ```
+
+## REVERSE 
+```bash
+#!/bin/bash
+rev 
+```
