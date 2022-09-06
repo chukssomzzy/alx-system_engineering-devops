@@ -78,3 +78,9 @@ ls -t | head
 #!/bin/bash
 sort -u -c 
 ```
+
+## Search file with pattern 
+```bash
+#!/bin/bash
+grep "root" /etc/passwd
+```
