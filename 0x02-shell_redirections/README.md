@@ -65,7 +65,7 @@ find . -name "*.js" -type f -delete
 ## get em dirs
 ```bash
 #!/bin/bash
-find . -type d | wc -l
+find . -mindepth -type d | wc -l
 ```
 
 
