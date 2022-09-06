@@ -1,2 +1,2 @@
 #!/bin/bash
-rm -r -f $(find ./*.js -type f)
+rm -r $(find ./*.js -type f)
