@@ -124,3 +124,9 @@ tr -d 'cC'
 #!/bin/bash
 rev 
 ```
+
+## CUT! 
+```bash 
+#!/bin/bash
+cut -d: -f 1,6 /etc/bash 
+```
