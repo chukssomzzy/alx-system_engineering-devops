@@ -105,5 +105,5 @@ grep -v "bin" /etc/passwd
 ## Grab all lines beginning with a letter 
 ```bash
 #!/bin/bash
-grep -e '/^([A-Z]|[a-z])/g' /etc/ssh/sshd_config
+grep [[:alpha:]] /etc/ssh/sshd_config
 ```
