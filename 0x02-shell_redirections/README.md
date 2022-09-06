@@ -95,3 +95,9 @@ grep "bin" /etc/passwd | wc -l
 #!/bin/bash
 grep -A 3 "bin" /etc/passwd
 ```
+
+## No one like the bin
+```
+#!/bin/bash
+grep -v "bin" /etc/passwd
+```
