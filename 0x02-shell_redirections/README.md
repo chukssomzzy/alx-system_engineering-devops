@@ -73,5 +73,8 @@ find . -mindepth -type d | wc -l
 #!/bin/bash
 ls -t | head
 ```
-
-
+## Check for dub 
+```bash
+#!/bin/bash
+sort -u -c 
+```
