@@ -107,3 +107,8 @@ grep -v "bin" /etc/passwd
 #!/bin/bash
 grep [[:alpha:]] /etc/ssh/sshd_config
 ```
+## Translate this letters 
+```bash
+#!/bin/bash
+tr 'Ac' 'Ce'
+```
