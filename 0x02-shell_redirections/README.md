@@ -61,3 +61,11 @@ tail -1 iacta >> iacta
 #!/bin/bash
 find . -name "*.js" -type f -delete
 ```
+
+## get em dirs
+```bash
+#!/bin/bash
+find . -type d | wc -l
+```
+
+
