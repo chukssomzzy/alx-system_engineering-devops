@@ -84,3 +84,9 @@ sort -u -c
 #!/bin/bash
 grep "root" /etc/passwd
 ```
+
+## Display line number with bin
+```bash
+#!/bin/bash
+grep "bin" /etc/passwd | wc -l
+```
