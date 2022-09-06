@@ -68,4 +68,10 @@ find . -name "*.js" -type f -delete
 find . -mindepth -type d | wc -l
 ```
 
+## list by timestamps 
+```bash 
+#!/bin/bash
+ls -t | head
+```
+
 
