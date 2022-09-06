@@ -50,3 +50,8 @@ echo -e "Best School" > '\*\\'\''"Best School"\'\''\\*$\?\*\*\*\*\*:)'
 ls -la > ls_cwd_content
 ```
 
+## Duplicate last line 
+```bash 
+#!/bin/bash
+tail -1 iacta >> iacta
+```
