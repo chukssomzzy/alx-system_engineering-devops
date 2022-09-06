@@ -37,5 +37,16 @@ head /etc/passwd #displays 10 lines from the start of file by default
 #!/bin/bash
 head -3 ./iacta | tail -1 
 ```
+## the tooks alot of time 
+```bash 
 
+#!/bin/bash
+echo -e "Best School" > '\*\\'\''"Best School"\'\''\\*$\?\*\*\*\*\*:)'
+``` 
+
+## Save current state of directory 
+```bash 
+#!/bin/bash
+ls -la > ls_cwd_content
+```
 
