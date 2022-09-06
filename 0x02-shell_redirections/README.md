@@ -90,3 +90,8 @@ grep "root" /etc/passwd
 #!/bin/bash
 grep "bin" /etc/passwd | wc -l
 ```
+## Display those below
+```bash
+#!/bin/bash
+grep -A 3 "bin" /etc/passwd
+```
