@@ -14,3 +14,7 @@ echo "Hello $(whoami)"
 ```bash
 PATH=$PATH:action
 ```
+
+## count path 
+```bash
+echo $PATH | tr ":" " " | wc -w
