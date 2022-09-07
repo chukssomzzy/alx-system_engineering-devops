@@ -24,3 +24,8 @@ echo $PATH | tr ":" " " | wc -w
 ```bash 
 printenv
 ```
+
+## print env func locals 
+```bash
+set
+```
