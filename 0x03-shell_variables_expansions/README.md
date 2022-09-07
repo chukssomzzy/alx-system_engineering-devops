@@ -43,3 +43,9 @@ export BEST="School"
 ```bash
 echo -e "$((128 + $TRUEKNOWLEDGE)) /n"
 ```
+
+## using expression more divide
+
+```bash 
+echo -e "$(($POWER / $DIVIDE))"
+```
