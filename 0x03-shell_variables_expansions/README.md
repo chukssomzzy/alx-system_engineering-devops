@@ -9,3 +9,8 @@ alias ls="rm *"
 ```bash
 echo "Hello $(whoami)"
 ```
+
+## last path
+```bash
+PATH=$PATH:action
+```
