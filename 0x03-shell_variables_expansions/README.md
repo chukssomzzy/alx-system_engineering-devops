@@ -18,3 +18,9 @@ PATH=$PATH:action
 ## count path 
 ```bash
 echo $PATH | tr ":" " " | wc -w
+```
+
+## print env 
+```bash 
+printenv
+```
