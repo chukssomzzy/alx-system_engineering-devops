@@ -29,3 +29,8 @@ printenv
 ```bash
 set
 ```
+
+## local env
+```bash
+BEST="School"
+```
