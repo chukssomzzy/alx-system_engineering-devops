@@ -64,3 +64,8 @@ echo -e "$((2#$BINARY))"
 ```bash
 echo {a..z}{a..z} | tr 'oo' -d
 ```
+
+## print float
+```bash 
+printf "%0.2f\n" $NUM 
+```
