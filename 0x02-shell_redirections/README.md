@@ -130,3 +130,9 @@ rev
 #!/bin/bash
 cut -d: -f 1,6 /etc/bash 
 ```
+
+## find empty files 
+```bash
+#!/bin/bash
+find . -empty -printf "%f\n"
+```
