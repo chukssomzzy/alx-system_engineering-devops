@@ -38,3 +38,8 @@ BEST="School"
 ```bash
 export BEST="School"
 ```
+
+## using expression
+```bash
+echo -e "$((128 + $TRUEKNOWLEDGE)) /n"
+```
