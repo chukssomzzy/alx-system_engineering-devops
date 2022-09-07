@@ -34,3 +34,7 @@ set
 ```bash
 BEST="School"
 ```
+## global var
+```bash
+export BEST="School"
+```
