@@ -59,3 +59,8 @@ echo -e "$(($BREATH ** $LOVE))"
 ```bash
 echo -e "$((2#$BINARY))"
 ```
+
+## All Combinaton
+```bash
+echo {a..z}{a..z} | tr 'oo' -d
+```
