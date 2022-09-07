@@ -136,3 +136,20 @@ cut -d: -f 1,6 /etc/bash
 #!/bin/bash
 find . -empty -printf "%f\n"
 ```
+## 101- gifs 
+```bash
+#!/bin/bash
+find . -type f -name "*.gif" -printf "%f\n"| rev | cut -d '.' -f2- | rev | LC_ALL=C sort -f
+```
+
+## Acoutic 
+```bash
+#!/bin/bash
+echo -ne $(cut -c-1 | tr -d '\n')'\n 
+```
+
+## Biggest Fans 
+ ```bash 
+ #!/bin/bash
+ tail -n +2 | cut -f1 | sort | uniq -c | sort -nr | head -11 | tr -s ' ' | cut -d' ' -f3
+ ```
