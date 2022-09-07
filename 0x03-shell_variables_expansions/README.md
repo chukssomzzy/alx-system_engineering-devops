@@ -49,3 +49,8 @@ echo -e "$((128 + $TRUEKNOWLEDGE)) /n"
 ```bash 
 echo -e "$(($POWER / $DIVIDE))"
 ```
+
+## Breath to the power of love 
+```bash
+echo -e "$(($BREATH ** $LOVE))"
+```
