@@ -54,3 +54,8 @@ echo -e "$(($POWER / $DIVIDE))"
 ```bash
 echo -e "$(($BREATH ** $LOVE))"
 ```
+
+## To Decimal
+```bash
+echo -e "$((2#$BINARY))"
+```
