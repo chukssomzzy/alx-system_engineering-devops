@@ -1,0 +1,4 @@
+#!/usr/bin/env bash 
+# print listen socket and program name using netstat 
+
+netstat -p -l
