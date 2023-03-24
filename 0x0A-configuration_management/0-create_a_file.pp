@@ -1,3 +1,5 @@
+# create a file at schoool in /tmp
+
 file {'/tmp/school':
   path    => '/tmp/school',
   mode    => '0744',
