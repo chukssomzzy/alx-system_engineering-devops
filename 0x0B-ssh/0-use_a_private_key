@@ -1,2 +1,3 @@
-#!/usr/bin/bash 
+#!/usr/bin/env bash 
+# login to a server via ssh
 ssh ubuntu@54.237.43.135
