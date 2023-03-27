@@ -1,7 +1,7 @@
 # create ssh client config 
 #
 
-$filectn = "HOSTS * 
+$filectn = "HOST * 
   PasswordAuthentication no 
   IdentityFile ~/.ssh/school
 "
