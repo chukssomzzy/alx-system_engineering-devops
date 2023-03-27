@@ -5,6 +5,6 @@ $filectn = "HOST *
   PasswordAuthentication no 
   IdentityFile ~/.ssh/school
 "
-file {'/root/.ssh/config':
+file {'/home/.ssh/config':
   content => $filectn
 }
