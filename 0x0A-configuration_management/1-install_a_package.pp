@@ -6,5 +6,5 @@
 exec { 'pip install flask==2.1.0':
   command => 'pip install flask==2.1.0',
   path    => '/usr/bin',
-  onlyif  => 'test `pip freeze | grep flask`="flask==2.1.0"'
+  onlyif  => 'test `pip freeze | grep flask`="Flask==2.1.0"'
 }
