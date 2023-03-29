@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# configures an nginx server 
+
+sudo apt-get update 
+sudo apt-get -y nginx 
+if  sudo ufw app list | grep -c "Nginx HTTP" 
+then
+    sudo ufw allow "Nginx HTTP"
+else
+    sudo apt-get -y install ufw
+    sudo ufw allow "Nginx HTTP"
+fi
+
+if systemctl status nginx | grep -c "active (running)"
+then
+    sudo chown "$USER":"$USER" "/var/www/html/*"
+    echo "Hello World" > "/var/www/html/*.html"
+fi
+
+if test 'curl http://127.0.0.1'=="Hello World"
+then
+    exit 0;
+else
+    exit 1;
+fi
