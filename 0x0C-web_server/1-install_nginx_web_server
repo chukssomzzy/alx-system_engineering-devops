@@ -19,9 +19,3 @@ else
     service start nginx;
 fi
 
-if test 'curl http://127.0.0.1'=="Hello World!"
-then
-    exit 0;
-else
-    exit 1;
-fi
