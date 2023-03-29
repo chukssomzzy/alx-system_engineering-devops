@@ -11,11 +11,6 @@ else
     ufw allow "Nginx HTTP"
 fi
 
-if systemctl status nginx | grep -c "active (running)"
-then
-    chown "$USER":"$USER" "/var/www/html/index.nginx-debian.html"
-    echo "Hello World" > "/var/www/html/index.nginx-debian.html"
-else
-    service start nginx;
-fi
-
+chown "$USER":"$USER" "/var/www/html/index.nginx-debian.html"
+echo "Hello World" > "/var/www/html/index.nginx-debian.html"
+service start nginx;
