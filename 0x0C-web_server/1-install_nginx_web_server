@@ -10,7 +10,5 @@ else
     apt-get -y install ufw
     ufw allow "Nginx HTTP"
 fi
-
-chown "$USER":"$USER" "/var/www/html/index.nginx-debian.html"
 echo "Hello World" > "/var/www/html/index.nginx-debian.html"
 service start nginx;
