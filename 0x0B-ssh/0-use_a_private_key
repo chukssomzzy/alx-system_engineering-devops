@@ -1,4 +1,0 @@
-#!/usr/bin/env bash 
-# login to a server via ssh
-
-ssh -i ~/.ssh/school ubuntu@54.237.43.135
