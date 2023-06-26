@@ -2,6 +2,6 @@
 
 file { '~/.ssh/config':
   ensure  => file,
-  path    => '/home/vagrant/.ssh/config',
+  path    => '/home/ubuntu/.ssh/config',
   content => "Host *\n\tPasswordAuthentication no\n\tIdentityFile '~/.ssh/school'\n"
 }
