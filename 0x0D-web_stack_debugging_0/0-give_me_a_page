@@ -2,4 +2,4 @@
 # debug and webserver with apache 
 
 CONTAINER_ID="$(docker ps | grep "holbertonschool/265-0" | awk '{print $1; }')"
-docker  exec -i "$CONTAINER_ID" "/etc/init.d/apache2 start"
+docker  exec -i "$CONTAINER_ID" /etc/init.d/apache2 start
