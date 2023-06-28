@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-sed -e "s/\(\s\)server_name _;/\1server_name _; \\n   rewrite ^\/.+?_me https:\/\/www.youtube.com\/watch?v=QH2-TGULwu4/1" test_file >> tmp_file 
-cat tmp_file > test_file
-rm tmp_file
