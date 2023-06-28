@@ -4,4 +4,5 @@ apt-get install ufw
 apt-get install nginx 
 ufw allow "Nginx http"
 echo "Hello World!" > /var/www/html/index.nginx-debian.html
+nginx -s reload
 exit 0
