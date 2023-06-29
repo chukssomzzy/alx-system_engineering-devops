@@ -1,7 +1,7 @@
 #!/usr/bin/env bash 
 # install and configure nginx
-REPL="\(\s\)server_name _;"
-REPL_WITH="\1server_name _; \\n\1rewrite ^\/.+?_me https:\/\/www.youtube.com\/watch?v=QH2-TGULwu4;" 
+REPL="\s\?server_name \(.*\);"
+REPL_WITH="\tserver_name \1; \\n\trewrite ^\/.+?_me https:\/\/www.youtube.com\/watch?v=QH2-TGULwu4;" 
 TMP_FILE="/tmp/default_tmp"
 OUT_CONF="/etc/nginx/sites-available/default"
 apt-get install ufw 
@@ -9,12 +9,12 @@ apt-get install nginx
 ufw allow "Nginx http"
 echo "Hello World!" > /var/www/html/index.nginx-debian.html
 # idempotent 
-if [  "$(grep -c "^\srewrite.*?;$")" -le 0 ]; then 
+if ! ( grep -c 'rewrite' "$OUT_CONF" ); then 
     {
         # file manipulation
-        sed "s/$REPL/$REPL_WITH/1" $OUT_CONF >> $TMP_FILE
-        cat $TMP_FILE >> $OUT_CONF
-        rm $OUT_CONF 
+        sed -e "/^[^#]/ s/$REPL/$REPL_WITH/1" $OUT_CONF > $TMP_FILE
+        cat $TMP_FILE > $OUT_CONF
+        rm $TMP_FILE 
     }
 fi
 
@@ -24,4 +24,4 @@ if [ "$(pgrep -c nginx)" -le 0 ]; then
 else 
     service nginx restart
 fi
-    exit 0 
+exit 0 
