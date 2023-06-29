@@ -18,8 +18,8 @@ if ! ( grep -c 'rewrite' "$OUT_CONF" ); then
     }
 fi
 
-if (nginx -t); then { exit 1; }; fi
-if [ "$(pgrep -c nginx)" -le 0 ]; then 
+if ! (nginx -t); then { exit 1; }; fi
+if  ( pgrep -c nginx ); then 
     service nginx start 
 else 
     service nginx restart
