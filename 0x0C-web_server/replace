@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+OUT_CONF="test_str"
+APP_TXT="\terror_page 404 /custom_404.html;\n\
+\tlocation = /custom_404.html {\n\
+\t\troot /var/www/html;\n\
+\t\tinternal;\n\
+}\n" 
+
+
+sed -i '/^[^#].*listen \[::\]:80.*;/a\
+    error_page 404 /404.html;\n\
+    location = /404.html {\n\
+        root /path/to/html/files;\n\
+    }' $OUT_CONF
+    
+cat $OUT_CONF 
