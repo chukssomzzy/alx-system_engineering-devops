@@ -32,7 +32,7 @@ server {
 }
 EOT
 if ! (nginx -t); then { exit 1; }; fi
-if  ( pgrep -c nginx ); then 
+if ! ( pgrep -c nginx ); then 
     service nginx start 
 else 
     service nginx restart
