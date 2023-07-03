@@ -28,7 +28,7 @@ server {
         internal;
     }
 
-    add_header X-Served-By "$HOSTN";
+    add_header X-Served-By $HOSTN;
 }
 EOT
 if ! (nginx -t); then { exit 1; }; fi
