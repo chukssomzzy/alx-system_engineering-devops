@@ -27,7 +27,7 @@ sed -i '/\toption\s/s/tcplog/httplog/1' "$CONFIG_DIR/haproxy.cfg"
 if ! grep -q "frontend" "$CONFIG_DIR/haproxy.cfg"; then
     cat <<EOT >> "$CONFIG_DIR/haproxy.cfg"
 frontend www
-    bind 34.203.77.97:80 
+    bind *:80 
     default_backend web01_02_backend
 
 backend web01_02_backend
