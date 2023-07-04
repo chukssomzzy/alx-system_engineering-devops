@@ -1,6 +1,7 @@
 #!/usr/bin/env bash 
-# install and configure nginx 
-apt-get -y install ufw 
+# install and configure nginx
+apt update
+apt-get -y install ufw
 apt-get -y install nginx 
 ufw allow "Nginx http"
 mkdir -p /var/www/html
