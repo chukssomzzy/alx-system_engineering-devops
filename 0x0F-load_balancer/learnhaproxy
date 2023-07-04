@@ -1,0 +1,82 @@
+frontend www 
+    bind :80 
+    acl image_url path_beg -i /images/ 
+    acl image_url path_beg -i /photos/ 
+    use_backend static_assets if image_url 
+
+backed static_assets 
+    server s1 192.168.50.20:80 
+
+frontend www
+    bind :80 
+    acl api_url path_beg /api/ 
+    acl is_post method POST 
+
+    #The path begins with /api/ and are POST request 
+    use_backend api_server if api_url is_post 
+
+backend api_servers 
+
+    server s1 192.168.50.20:80
+
+frontend www 
+    bind :80 
+    use_backend api_server if { path_beg /images/ } { method POST }
+
+backend api_server
+    server s1 192.168.50.20:80
+
+frontend www 
+    bind :80 
+    acl api_url path_beg /api/ 
+    use_backend api_servers if api_url {path_beg /image/}
+
+backend api_servers 
+    server s1 192.168.50.20:80
+
+frontend www 
+    bind :80 
+    acl api_url path_beg /api/
+    acl is_post method POST 
+
+    # The path begins with /api/ or it a post method 
+    use_backend api_servers if api_url || is_post 
+
+backend api_servers 
+    server s1 192.168.50.20:80
+
+frontend www 
+    bind :80 
+    acl api_url path_beg /api/
+
+    # use the webserver only if the path doesn't begin with a /api/ 
+    use_backend webservers unless api_url 
+
+backend webservers 
+    server s1 192.168.50.20:80
+
+frontend www 
+    bind :80 
+
+    # Boolean. Did the connection arrive over  SSL?
+    acl ssl_was_used ssl_fc 
+
+    # Integer. Is the destination port 8080? 
+    acl is_8080 dst_port 8080 
+
+    # IP address. Is the destination IP address localhost 
+    acl localhost dst 127.0.0.1 
+
+    acl contains_ping req.body -m sub PING 
+
+frontend www 
+    bind :80 
+    acl images_url path -i -m beg -f /etc/hapee-2.7/pattern.txt
+
+frontend www
+    bind :80 
+
+    #  Does the Host header match a key in the map file? 
+    acl requires_redirect req.hdr(HOST) -i -M -f ./redirects.map 
+
+    http-request redirect prefix https://%[req.hdr(Host), lower, map(./redirects.map)] code 301 if request
