@@ -1,0 +1,25 @@
+#!/bin/bash 
+# configure HAPROXY
+CONFIG_DIR="/etc/haproxy/"
+apt update 
+apt-get install --no-install-recommends -y software-properties-common
+add-apt-repository -y ppa:vbernat/haproxy-2.7
+apt-get install haproxy=2.7.\*
+cp "$CONFIG_DIR/haproxy.cfg" "$CONFIG_DIR/haproxy.cfg.orig" 
+sed -i "/\tmode\s/s/http/tcp/1"
+sed -i "/\toption\s/s/httplog/tcplog/1"
+tee -a "$CONFIG_DIR/haproxy.cfg" > /dev/null << EOT
+frontend www
+    bind 34.203.77.97:80 
+    default_backend web01_02_backend
+backend web01_02_backend
+    balance roundrobin
+    mode tcp
+    server 152562-web-01 54.160.79.245:80 check 
+    server 152562-web-02 18.234.129.129:80 check 
+EOT
+if ! (pgrep -c haproxy); then
+    { service haproxy start; }
+else
+    { service haproxy restart; }
+fi
