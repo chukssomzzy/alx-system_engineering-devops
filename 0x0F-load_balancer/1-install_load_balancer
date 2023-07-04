@@ -1,14 +1,22 @@
 #!/bin/bash 
 # configure HAPROXY
 CONFIG_DIR="/etc/haproxy/"
+DEFAULT_FILE="/etc/default/haproxy"
 apt update 
 apt-get install --no-install-recommends -y software-properties-common
 add-apt-repository -y ppa:vbernat/haproxy-2.7
 apt-get install haproxy=2.7.\*
+if ! (grep -c "ENABLED"); then 
+    tee -a "$DEFAULT_FILE" > /dev/null << EOT
+ENABLED=1 
+EOT
+else 
+    sed -i "ENABLED=s/./1/1"
+fi
 cp "$CONFIG_DIR/haproxy.cfg" "$CONFIG_DIR/haproxy.cfg.orig" 
 sed -i "/\tmode\s/s/tcp/http/1" "$CONFIG_DIR/haproxy.cfg"
 sed -i "/\toption\s/s/tcplog/httplog/1" "$CONFIG_DIR/haproxy.cfg"
-if ! (grep -c frontend); then
+if ! (grep -c frontend "$CONFIG_DIR/haproxy.cfg"); then
 tee -a "$CONFIG_DIR/haproxy.cfg" > /dev/null << EOT
 frontend www
     bind 34.203.77.97:80 
