@@ -8,6 +8,7 @@ apt-get install haproxy=2.7.\*
 cp "$CONFIG_DIR/haproxy.cfg" "$CONFIG_DIR/haproxy.cfg.orig" 
 sed -i "/\tmode\s/s/http/tcp/1" "$CONFIG_DIR/haproxy.cfg"
 sed -i "/\toption\s/s/httplog/tcplog/1" "$CONFIG_DIR/haproxy.cfg"
+if ! (grep -c frontend); then
 tee -a "$CONFIG_DIR/haproxy.cfg" > /dev/null << EOT
 frontend www
     bind 34.203.77.97:80 
@@ -15,9 +16,10 @@ frontend www
 backend web01_02_backend
     balance roundrobin
     mode tcp
-    server 152562-web-01 54.160.79.245:80 check 
-    server 152562-web-02 18.234.129.129:80 check 
+    server web_01 54.160.79.245:80 check 
+    server web_02 18.234.129.129:80 check 
 EOT
+fi
 if ! (pgrep -c haproxy); then
     { service haproxy start; }
 else
