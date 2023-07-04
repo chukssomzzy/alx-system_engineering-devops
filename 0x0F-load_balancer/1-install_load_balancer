@@ -20,8 +20,8 @@ fi
 
 # Backup and modify HAProxy configuration file
 cp "$CONFIG_DIR/haproxy.cfg" "$CONFIG_DIR/haproxy.cfg.orig"
-sed -i 's/\tmode\s/tcp/http/1' "$CONFIG_DIR/haproxy.cfg"
-sed -i 's/\toption\s/tcplog/httplog/1' "$CONFIG_DIR/haproxy.cfg"
+sed -i '/\tmode\s/s/tcp/http/1' "$CONFIG_DIR/haproxy.cfg"
+sed -i '/\toption\s/s/tcplog/httplog/1' "$CONFIG_DIR/haproxy.cfg"
 
 # Append frontend and backend configurations to the HAProxy configuration file
 if ! grep -q "frontend" "$CONFIG_DIR/haproxy.cfg"; then
