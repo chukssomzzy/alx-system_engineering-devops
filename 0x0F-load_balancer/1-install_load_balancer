@@ -6,8 +6,8 @@ apt-get install --no-install-recommends -y software-properties-common
 add-apt-repository -y ppa:vbernat/haproxy-2.7
 apt-get install haproxy=2.7.\*
 cp "$CONFIG_DIR/haproxy.cfg" "$CONFIG_DIR/haproxy.cfg.orig" 
-sed -i "/\tmode\s/s/http/tcp/1"
-sed -i "/\toption\s/s/httplog/tcplog/1"
+sed -i "/\tmode\s/s/http/tcp/1" "$CONFIG_DIR/haproxy.cfg"
+sed -i "/\toption\s/s/httplog/tcplog/1" "$CONFIG_DIR/haproxy.cfg"
 tee -a "$CONFIG_DIR/haproxy.cfg" > /dev/null << EOT
 frontend www
     bind 34.203.77.97:80 
