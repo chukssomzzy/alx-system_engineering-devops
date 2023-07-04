@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# configure HAProxy
 CONFIG_DIR="/etc/haproxy/"
 DEFAULT_FILE="/etc/default/haproxy"
 
