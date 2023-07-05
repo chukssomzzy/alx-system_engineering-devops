@@ -1,4 +1,4 @@
 #!/usr/bin/env bash 
 # resolve wrong link in sites-enabled
 rm /etc/nginx/sites-enabled/default
-scp -s /etc/nginx/sites-available/default /etc/nginx/sites-available/default
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-available/default
