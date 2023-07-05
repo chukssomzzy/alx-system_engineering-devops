@@ -1,3 +1,4 @@
 #!/usr/bin/env bash 
 # resolve wrong link in sites-enabled
 ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx restart
