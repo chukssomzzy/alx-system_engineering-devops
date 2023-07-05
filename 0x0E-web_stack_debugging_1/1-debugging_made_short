@@ -1,6 +1,5 @@
 #!/usr/bin/env bash 
 # report wrong status
 pkill nginx 
-service nginx start
 ln -f /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 service nginx restart 
