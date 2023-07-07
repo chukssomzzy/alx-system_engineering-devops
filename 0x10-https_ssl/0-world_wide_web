@@ -1,0 +1,60 @@
+#!/usr/bin/env bash 
+# interrogate a name server 
+if [[ $# == 0 ]]; then 
+    exit 1
+fi
+
+declare -l DOMAIN
+declare -al SUBDOMAINS
+declare -l SUBDOMAIN
+
+DOMAIN=$1
+if [ $# == 2 ]; then
+    SUBDOMAIN=$2 
+fi
+
+SUBDOMAINS=("www" "lb-01" "web-01" "web-02")
+# function that takes the domain as arg and returns all web-01 web-02 lb-01 as argi
+
+function parsedomain() { 
+    if [ $# == 1 ]; then 
+        SUBDOMAINS=("$1.$DOMAIN");
+    else
+        for i in {0..3}
+        do 
+            SUBDOMAINS[i]="${SUBDOMAINS[i]}.$DOMAIN";
+        done
+    fi
+}
+
+function printfmt() {
+    echo "The subdomain $1 is a $2 record and points to $3"
+}
+
+function dig_and_print() {
+    local dig_answer;
+    local subdomain;
+    local recordtype;
+    local destination
+
+    for sub in "${SUBDOMAINS[@]}";
+    do
+        dig_answer=$(dig "$sub" | grep -A 1 "ANSWER SECTION:" | sed "1d")
+        destination=$(echo "$dig_answer" | awk '{print $5;}')
+        subdomain=$(echo "$dig_answer" | awk '{print $1;}' | awk -F '.' '{print $1;}')
+        recordtype=$(echo "$dig_answer" | awk '{print $4;}')
+        printfmt "$subdomain" "$recordtype" "$destination"
+    done 
+
+}
+
+function main() {
+    if [[ -n $SUBDOMAIN ]]; then
+        parsedomain "$SUBDOMAIN"
+    else
+        parsedomain
+    fi
+    dig_and_print
+}
+
+main;
