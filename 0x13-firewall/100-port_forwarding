@@ -1,0 +1,16 @@
+#!/usr/bin/env bash 
+# configure firewall 
+
+apt-get install -y ufw
+ufw default deny incoming 
+ufw default allow outgoing 
+ufw allow 22/tcp 
+ufw allow 443/tcp 
+ufw allow  80/tcp
+ufw allow 8080/tcp
+sed -i "s/#net\/ipv6\/conf\/all\/forwarding=1/net\/ipv6\/conf\/all\/forwarding=1/1" 
+sed -i "s/#net\/ipv6\/conf\/default\/forwarding=1/net\/ipv6\/conf\/default\/forwarding=1/1" 
+sed -i "s/#net\/ipv4\/ip_forward=1/net\/ipv4\/ip_forward=1/1"
+sed -i "s/\*filter/*nat\n:PREROUTING ACCEPT [0:0]\n-A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80\nCOMMIT *filter/1" 
+ufw disable 
+ufw enable 
