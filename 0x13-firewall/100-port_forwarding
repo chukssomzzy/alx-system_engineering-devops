@@ -10,7 +10,6 @@ ufw allow  80/tcp
 ufw allow 8080/tcp
 sed -i "s/#net\/ipv6\/conf\/all\/forwarding=1/net\/ipv6\/conf\/all\/forwarding=1/1" /etc/ufw/sysctl.conf 
 sed -i "s/#net\/ipv6\/conf\/default\/forwarding=1/net\/ipv6\/conf\/default\/forwarding=1/1" /etc/ufw/sysctl.conf
-sed -i "s/#net\/ipv4\/ip_forward=1/net\/ipv4\/ip_forward=1/1" \etc\ufw\sysctl.conf
+sed -i "s/#net\/ipv4\/ip_forward=1/net\/ipv4\/ip_forward=1/1" /etc/ufw/sysctl.conf
 sed -i "s/\*filter/*nat\n:PREROUTING ACCEPT [0:0]\n-A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80\nCOMMIT *filter/1" /etc/ufw/before.rules 
-ufw disable 
-ufw enable 
+ufw reload
