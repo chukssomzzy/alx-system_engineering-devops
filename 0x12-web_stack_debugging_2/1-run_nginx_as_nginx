@@ -1,4 +1,5 @@
 #!/usr/bin/env bash 
 # run nginx as nginx 
-pkill nginx 
+pkill nginx
+usermod -aG sudo nginx
 sudo -unginx service nginx start
