@@ -2,7 +2,7 @@
 # create a backup of the database 
 
 if [[ $# -eq 2 ]]; then 
-    mysqldump -u root --all-databases -p "$1" --result-file backup.sql
+    mysqldump -u root --all-databases -p"$1" --result-file backup.sql
 else 
     mysqldump -u root --all-databases --result-file backup.sql
 fi
