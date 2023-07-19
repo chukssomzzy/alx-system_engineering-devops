@@ -6,5 +6,5 @@ if $1; then
 else 
     mysqldump -u root --all-databases > backup.sql
 fi
-archive_name="$(date %d-%m-%Y).tar.gz"
+archive_name="$(date +'%d-%m-%Y').tar.gz"
 tar -cf "$archive_name" backup.sql
