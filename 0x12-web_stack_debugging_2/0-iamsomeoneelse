@@ -1,7 +1,7 @@
 #!/usr/bin/env bash 
-# run as another user 
-if [[ $# -eq 2 ]]; then
+# run as another user
+if [[ $# -eq 1 ]]; then
     sudo -u"$1" whoami
     exit 0
 fi
-exit 1
+whoami
