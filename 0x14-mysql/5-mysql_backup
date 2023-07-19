@@ -2,9 +2,9 @@
 # create a backup of the database 
 
 if $1; then 
-    mysqldump -u root --all-databases --password "$1" > backup.sql
+    mysqldump -u root --all-databases -p "$1" --result-file backup.sql
 else 
-    mysqldump -u root --all-databases > backup.sql
+    mysqldump -u root --all-databases --result-file backup.sql
 fi
 archive_name="$(date +'%d-%m-%Y').tar.gz"
 tar -cf "$archive_name" backup.sql
