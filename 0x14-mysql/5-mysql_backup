@@ -1,7 +1,7 @@
 #!/usr/bin/env bash 
 # create a backup of the database 
 
-if $1; then 
+if [[ $# -eq 2 ]]; then 
     mysqldump -u root --all-databases -p "$1" --result-file backup.sql
 else 
     mysqldump -u root --all-databases --result-file backup.sql
