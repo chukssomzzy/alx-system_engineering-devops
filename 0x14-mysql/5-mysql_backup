@@ -7,4 +7,4 @@ else
     mysqldump -u root --all-databases --result-file backup.sql
 fi
 archive_name="$(date +'%d-%m-%Y').tar.gz"
-tar -czf "$archive_name" backup.sql
+tar -caf "$archive_name" backup.sql
