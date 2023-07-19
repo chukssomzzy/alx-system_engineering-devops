@@ -1,0 +1,4 @@
+#!/usr/bin/env bash 
+# run nginx as nginx 
+pkill nginx 
+sudo -u nginx nginx start
