@@ -25,6 +25,7 @@ try:
     for task_title in completed_task_title:
         print(f"\t {task_title}")
 except Exception as e:
+    print(e)
     exit(1)
 else:
     exit(0)
