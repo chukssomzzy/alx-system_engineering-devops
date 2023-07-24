@@ -12,16 +12,14 @@ try:
     r_task = requests.get(url_user_task)
     r_user = requests.get(url_user)
     employee_tasks = r_task.json()
-    employee_name = r_user.json().get('name')
-    task_comp = 0
-    total_task = 0
-    completed_task_title = []
+    employee_username = r_user.json().get('username')
     with open(f'{id}.csv', 'w', newline='') as csvfile:
         taskwriter = csv.writer(csvfile, delimiter=',',
                                 quotechar='"', quoting=csv.QUOTE_ALL)
         for task in employee_tasks:
             taskwriter.writerow(
-                [id, employee_name, task.get("completed"), task.get("title")])
+                [id, employee_username, task.get("completed"),
+                 task.get("title")])
 except Exception as e:
     print(e)
     exit(1)
