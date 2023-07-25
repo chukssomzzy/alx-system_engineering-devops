@@ -8,6 +8,8 @@ import requests
 if __name__ == "__main__":
     try:
         id = int(argv[1])
+        if not id:
+            exit(1)
         url_user_task = \
             f'https://jsonplaceholder.typicode.com/users/{id}/todos'
         url_user = f'https://jsonplaceholder.typicode.com/users/{id}'
