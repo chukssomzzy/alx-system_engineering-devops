@@ -7,7 +7,7 @@ import requests
 
 def recurse(subreddit, hot_list=[], after=None):
     """Recursively list a hot post"""
-    url = f"https://www.reddit.com/r/{subreddit}/top.json"
+    url = f"https://www.reddit.com/r/{subreddit}/hot.json"
     params = {"count": len(hot_list), "after": after}
     headers = {"User-Agent": "chukssomzzy-app/v0.0.1"}
     r = requests.get(url, params=params, headers=headers,
