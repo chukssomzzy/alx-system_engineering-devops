@@ -25,17 +25,8 @@ def count_words(subreddit, word_list, after=None):
         for article in hot_articles:
             article_title = article["data"]["title"].lower()
             for word in word_list:
-                p = re.compile(r'{}\s?'.format(word))
-                found_word = p.search(article_title)
-                if found_word:
-                    found_word = found_word.span()
-                while found_word:
-                    article_title = article_title[found_word[1]:]
-                    word_list[word] += 1
-                    found_word = p.search(article_title)
-                    if found_word:
-                        found_word = found_word.span()
-
+                p = re.compile(r'{}[^\.!\w]?'.format(word))
+                word_list[word] += len(p.findall(article_title))
         if after:
             count_words(subreddit, word_list, after)
         else:
