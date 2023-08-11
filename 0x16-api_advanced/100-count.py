@@ -3,6 +3,8 @@
 
 
 import requests
+import re
+from operator import itemgetter
 
 
 def count_words(subreddit, word_list, after=None):
@@ -15,7 +17,7 @@ def count_words(subreddit, word_list, after=None):
     if type(word_list) == list:
         word_list_copy = {}
         for word in word_list:
-            word_list_copy[word + " "] = 0
+            word_list_copy[word] = 0
         word_list = word_list_copy
     if r.status_code == 200:
         after = r.json()["data"]["after"]
@@ -23,16 +25,15 @@ def count_words(subreddit, word_list, after=None):
         for article in hot_articles:
             article_title = article["data"]["title"]
             for word in word_list:
-                word_index = article_title.find(word)
-                while word_index != -1:
-                    article_title = article_title[(word_index + len(word)):]
-                    word_list[word] += 1
-                    word_index = article_title.find(word)
+                p = re.compile(r'{}\s?'.format(word))
+                article_split = p.split(article_title)
+                if len(article_split) > 1:
+                    word_list[word] += len(article_split) - 1
         if after:
             count_words(subreddit, word_list, after)
         else:
             for word, val in sorted(word_list.items(),
-                                    key=lambda key_val: key_val[1],
+                                    key=itemgetter(1),
                                     reverse=True):
                 if val != 0:
                     print(f"{word.strip()}: {val}")
