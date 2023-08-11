@@ -17,18 +17,25 @@ def count_words(subreddit, word_list, after=None):
     if type(word_list) == list:
         word_list_copy = {}
         for word in word_list:
-            word_list_copy[word] = 0
+            word_list_copy[word.lower()] = 0
         word_list = word_list_copy
     if r.status_code == 200:
         after = r.json()["data"]["after"]
         hot_articles = r.json()["data"]["children"]
         for article in hot_articles:
-            article_title = article["data"]["title"]
+            article_title = article["data"]["title"].lower()
             for word in word_list:
                 p = re.compile(r'{}\s?'.format(word))
-                article_split = p.split(article_title)
-                if len(article_split) > 1:
-                    word_list[word] += len(article_split) - 1
+                found_word = p.search(article_title)
+                if found_word:
+                    found_word = found_word.span()
+                while found_word:
+                    article_title = article_title[found_word[1]:]
+                    word_list[word] += 1
+                    found_word = p.search(article_title)
+                    if found_word:
+                        found_word = found_word.span()
+
         if after:
             count_words(subreddit, word_list, after)
         else:
