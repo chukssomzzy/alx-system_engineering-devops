@@ -1,0 +1,60 @@
+# this specifies that there is a WSGI server running on port 5000 
+upstream app_server_flaskapp {
+	server 0.0.0.0:5000 fail_timeout=0;
+}
+
+upstream app_server_flaskeven {
+	server 0.0.0.0:5001 fail_timeout=0;
+}
+
+upstream app_server_flaskapi {
+	server 0.0.0.0:5002 fail_timeout=0;
+} 
+
+server {
+    
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    location /hbnb_static/ {
+        alias "/data/web_static/current/";
+        autoindex off;
+    }
+    
+    location /api/ {
+	proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+	proxy_set_header Host $http_host;
+	proxy_redirect off;
+	proxy_pass http://app_server_flaskapi;
+}
+
+    location ~ ^/airbnb-dynamic/number_odd_or_even/(\d+)$ {
+         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; 
+	 proxy_set_header Host $http_host;
+	 proxy_redirect off;
+	 proxy_pass http://app_server_flaskeven/number_odd_or_even/$1;
+    }
+	
+    location /airbnb-onepage/ {
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+	proxy_redirect off;
+	proxy_pass http://app_server_flaskapp;
+    }
+
+    location / {
+        root /var/www/html;
+        index index.html;
+    }
+
+    location /redirect_me {
+        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+    }
+
+    error_page 404 /404.html;
+
+    location = /404.html{
+        internal;
+    }
+    add_header X-Served-By 152562-web-01;
+}
