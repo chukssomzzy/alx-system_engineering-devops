@@ -4,5 +4,5 @@ exec { 'fix--for--nginx':
   path    => ['/usr/bin', '/bin'],
   cwd     => '/etc/default',
   group   => 'sudo',
-  command => 'sed -ri "/\<ULIMIT=.-n*\>/ s/[[:digit:]]+/478/1" nginx'
+  command => 'sed -ri "/\<ULIMIT=.-n*\>/ s/[[:digit:]]+/5000/1" nginx'
   }
