@@ -1,3 +1,0 @@
-ULIMIT="-n 478"
-holberton hard nofile 40000
-holberton soft nofile 40000

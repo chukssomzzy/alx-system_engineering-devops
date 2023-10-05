@@ -1,4 +1,0 @@
-#!/usr/bin/env bash 
-# gracefully reload my deployed gunicorn 
-MAIN_PID=$(sudo systemctl status gunicorn | grep "Main PID" | awk '{ print $3 }')
-kill -HUP "$MAIN_PID"
