@@ -3,9 +3,8 @@
 
 
 import re
-from operator import itemgetter
-
 import requests
+from operator import itemgetter
 
 
 def count_words(subreddit, word_list, after=None):
