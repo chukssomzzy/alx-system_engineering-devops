@@ -2,9 +2,10 @@
 """Recursively page throw the top post in a reddit"""
 
 
-import requests
 import re
 from operator import itemgetter
+
+import requests
 
 
 def count_words(subreddit, word_list, after=None):

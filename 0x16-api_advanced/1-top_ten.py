@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Get the top 10 post in a reddit"""
 
-
 import requests
 
 
