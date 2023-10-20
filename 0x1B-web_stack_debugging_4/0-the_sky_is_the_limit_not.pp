@@ -5,3 +5,8 @@ exec { 'fix--for-nginx':
   cwd     => '/etc/default',
   path    => '/bin',
 }
+
+exec { 'reload--nginx':
+  command => 'service nginx restart',
+  path    => '/usr/sbin',
+}
