@@ -1,0 +1,4 @@
+#!/usr/bin/env bash 
+
+main_pid=$(service gunicorn status | grep 'Main PID' | awk '{ print $3 }')
+kill -HUP "$main_pid"
