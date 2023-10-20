@@ -7,6 +7,5 @@ exec { 'fix--for-nginx':
 }
 
 exec { 'reload--nginx':
-  command => 'service nginx restart',
-  path    => '/usr/sbin',
+  command => '/usr/sbin/service nginx restart',
 }
