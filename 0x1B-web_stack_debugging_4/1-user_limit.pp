@@ -5,5 +5,3 @@ exec { 'change-os-configuration-for-holberton-user':
   path    => '/bin',
   cwd     => '/etc/security',
 }
-
- 
